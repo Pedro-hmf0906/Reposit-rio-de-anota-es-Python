@@ -1,5 +1,5 @@
 # --".strip()"-- é uma ferramenta fundamental para manipulação de strings, usada para remover caracteres indesejados
-nome = input("Digite seu nome: ").strip() 
+nome = input("Digite seu nome: ")
 idade = input("Digite sua idade: ")
 print() #/r/n
 
