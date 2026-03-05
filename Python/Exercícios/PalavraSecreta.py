@@ -15,6 +15,9 @@ Faça a contagem de tentativas do seu
 usuário.
 """
 
+import os
+
+
 string = 'Termo'
 palavra_secreta = string.lower()
 texto = ''
@@ -28,15 +31,17 @@ while True:
 
         #Caso o usuário digite caracteres maiúsculo
         lowercase = palavra_adivinhada.lower()
+        print('-' * 10)
 
         #Verifica se o caractere digitado pelo usuário está na palavra secreta
         if lowercase in palavra_secreta:
+            print("A palavra está na palavra secreta !")
             texto += lowercase
+        else:
+            print("A palavra não está na palavra secreta !")
+            print('-' * 10)
+            continue
         
-        #DICA
-        if contador == 6:
-            print("DICA: A palavra secreta não possui espaços, caracteres especiais e acentos")
-
         palavra_formada = ''
 
         #Posiciona exatamente na posição em que se encontra o caractere digitado pelo usuário
@@ -45,8 +50,16 @@ while True:
                 palavra_formada += letra_secreta
             else:
                 palavra_formada += '*' 
-        
+
+        print('-' * 10)
+
+        print(palavra_formada)
+
         if palavra_formada == palavra_secreta:
+          os.system('cls' if os.name == 'nt' else 'clear') #Limpa o terminal, 'nt' para windows e 'posix' para UNIX
+          #Só para Windows: os.system('cls')
+          #Unix: os.system('clear')
+
           print("Parabéns, você adivinhou a palavra secreta !!!")
           break
         
