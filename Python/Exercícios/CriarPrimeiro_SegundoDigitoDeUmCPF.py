@@ -1,22 +1,24 @@
+import random
+
+
 while True:
     try:
         numeros = []
 
-        while len(numeros) < 9:
-            valor = int(input("Digite um número (0-9): "))
+        for _ in range(9):
+            numeros.append(random.randint(0,9))
 
-            if 0 <= valor <= 9:
-                numeros.append(valor)
-            else:
-                print("Digite um número entre 0 e 9")
-
+        # Função
         def calcula_digito(lista, peso_inicial):
             soma = 0
 
             for i, numero in enumerate(lista):
                 soma += numero * (peso_inicial - i)
+            print("Soma:",soma)
 
             resultado = (soma * 10) % 11
+            print('Resultado divisão:',resultado)
+            
             return 0 if resultado > 9 else resultado
 
         digito1 = calcula_digito(numeros, 10)
@@ -25,7 +27,7 @@ while True:
         digito2 = calcula_digito(numeros, 11)
         numeros.append(digito2)
 
-        cpf = "{}{}{}.{}{}{}.{}{}{}-{}{}".format(*numeros)
+        cpf = "{}{}{}.{}{}{}.{}{}{}-{}{}".format(*numeros) #Legal !
 
         print("CPF gerado:", cpf)
 
