@@ -11,7 +11,6 @@ from typing import Counter
 string = input("Digite uma palavra: ")
 vogais = "aeiouáéíóúâêîôûãõ"
 
-contador_letras = Counter(string)
 vogais_na_string = ''
 consoantes_na_string = ''
 contador_vogais = 0

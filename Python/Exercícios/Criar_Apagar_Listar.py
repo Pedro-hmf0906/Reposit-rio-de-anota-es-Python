@@ -23,7 +23,7 @@ while True:
             item = input("Por favor, selecione um item para suas compras !\nItem: ")
         
             if item == '':
-                print("Nada foi digitado. Digite novamente !\n")
+                print("\nNada foi digitado. Digite novamente !\n")
                 continue
         
             carrinho_de_compras.append(item)
@@ -34,49 +34,53 @@ while True:
         continue
     
     elif opcao == 'a':
-        
-        print("Selecione um índice para remover:\n")
 
-        while True:
-            try:   
-                for i, nome in enumerate(carrinho_de_compras):
-                    print(i, nome)
-                print()
-                indice = int(input('Índice: '))
-                del carrinho_de_compras[indice]
-                os.system('cls' if os.name == 'nt' else 'clear')
-                break    
-            except ValueError:
-                print("\nInsira um número inteiro !\n")
-            
-            except IndexError:
-                print("\nÍndice inexistente na lista\n")
-            
-            except Exception:
-                print('\nErro desconhecido\n')
-            
+        if not carrinho_de_compras: # Verifica se a lista está vazia
+            print("O seu carrinho está vázio, insira algo, por gentileza !")
+            continue
+        else:    
+        
+            print("Selecione um índice para remover:\n")
+        
+            while True:
+                try:   
+                    for i, nome in enumerate(carrinho_de_compras):
+                        print(i, nome)
+                    print()
+                    indice = int(input('Índice: '))
+                    del carrinho_de_compras[indice]
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    break    
+                except ValueError:
+                    print("\nInsira um número inteiro !\n")
+                
+                except IndexError:
+                    print("\nÍndice inexistente na lista\n")
+                
+                except Exception:
+                    print('\nErro desconhecido\n')
+                
         continue
     
     elif opcao == 'l':
         
-        if carrinho_de_compras is None or len(carrinho_de_compras) == 0:
-            os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+        if not carrinho_de_compras:
             print("Nada foi inserido ainda, insira alguma coisa !\n")
             continue
-        
-        os.system('cls' if os.name == 'nt' else 'clear')
         
         for indice, nome in enumerate(carrinho_de_compras):
             print(indice, nome)
         print()
     
     elif opcao == 's':
-        
+        print("Saindo...")
         break
 
     else:
         
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Opção inexistente. Por favor, selecione uma das opção sugeridas: i, a ou l\n")
+        print("Opção inexistente. Por favor, selecione uma das opção sugeridas: i, a, l ou s\n")
         print()
         continue
