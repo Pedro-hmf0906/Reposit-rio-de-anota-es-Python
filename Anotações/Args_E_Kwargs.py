@@ -5,7 +5,7 @@ def multiplicador(multiplicador):
         resultado = []
 
         for item in args:
-            resultado.append(item*4)
+            resultado.append(item*multiplicador)
         
         return resultado
     return multiplicar
