@@ -20,3 +20,4 @@ print(lista_frases)
 frases_unidas = ',--- '.join(lista_frases) # A string antes de '.join()' é o caractere que vai conectar com os valores da lista
 
 print(frases_unidas)
+#Saída: Olha só que,--- coisa interessante
