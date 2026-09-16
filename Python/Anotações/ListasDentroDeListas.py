@@ -14,6 +14,7 @@ print(salas[1][0])
 print(salas[0][1])
 print(salas[2][2])
 print(salas[2][3][3])
+print(len(salas), " -> Tamanho da lista de listas")
 
 for sala in salas:
     print('-' * 10)

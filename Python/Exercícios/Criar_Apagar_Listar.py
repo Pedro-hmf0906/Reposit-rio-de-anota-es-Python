@@ -9,7 +9,8 @@ import os
 carrinho_de_compras = [] #Inicialmente vazia
 
 #AVISO !!!!!
-#Sim, eu sei que eu poderia utilizar switch, mas ainda não fui atrás de como é a sintaxe dele, fora que eu tô treinando if/elif/else
+#   Sim, eu sei que eu poderia utilizar switch, mas ainda não fui atrás de como é a sintaxe dele, 
+#   fora que eu tô treinando if/elif/else
 
 while True:
     lowercase = input("Selecione uma opção: \n [i]nserir [a]pagar [l]istar [s]air: ")

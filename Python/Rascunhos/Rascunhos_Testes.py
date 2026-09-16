@@ -62,24 +62,129 @@
 
 '''Maior e Menor'''
 
-# import random
-
 # numeros = []
 
-# maior = 0
+# while True:
+# 	numero_novo = input('Digite um número para adicionar: ')
 
-# for i in range(20):
-#     numeros.append(random.randint(0,100))
+# 	if numero_novo.isdigit():
+# 		numero_novo = int(numero_novo)
 
-# print(*numeros)
-# menor = numeros[0]
+# 	if numero_novo == 0:
+# 		break
+# 	numeros.append(numero_novo)
+				
+# print('Maior :', max(numeros))
+# print('Menor :', min(numeros))
+# print('Média :', sum(numeros) / (1 + len(numeros)))
+# print('Soma  :' , sum(numeros))
+# print(*numeros , "0")
 
-# for tamanho in numeros:
+"""VERIFICADOR DE PALÍNDROMO"""
 
-#     if tamanho > maior:
-#         maior = tamanho
-#     if menor > tamanho:
-#         menor = tamanho
+# palavra = input('Digite uma palavra: ').upper().replace(" ", "")
+# palavra_formada = ""
 
-# print('Maior:',maior)
-# print('Menor:',menor)
+# for i in range(len(palavra)):
+# 	if palavra[i] == palavra[-1 - i]:
+# 		palavra_formada += palavra[i]
+# 	else: 
+# 		break
+
+# if palavra_formada == palavra:
+# 	print("Sua palavra é um palíndromo")
+# else:
+# 	print("Sua palavra não é um palíndromo")
+
+"""Contagem de letras em uma palavra"""
+
+# from collections import Counter
+
+# texto = input("Selecione seu texto: ").replace(" ", "")
+
+# dicionario = dict(Counter(texto))
+
+# for chave, valor in dicionario.items():
+#     print(f'Letra: {chave} - Quantidade: {valor}')
+
+"""Filtro de números pares e ao quadrado"""
+
+# lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+# lista_pares = []
+# lista_ao_quadrado = []
+
+# for numeros in lista:
+#     if numeros % 2 == 0:
+#         lista_pares.append(numeros)
+#     lista_ao_quadrado.append(numeros ** 2)
+
+# print("Lista original:", *lista)
+# print("Números pares:", *lista_pares)
+# print("Números ao quadrado:", *lista_ao_quadrado)
+
+"""Rascunho de teste sort() e list comprehension"""
+
+dados = [
+    {'nome': 'Ana', 'idade': 17, 'status': 'pendente'},
+    {'nome': 'Bruno', 'idade': 25, 'status': 'pendente'},
+    {'nome': 'Carla', 'idade': 30, 'status': 'pendente'},
+]
+
+dados1 = [
+    
+    {**dado, 'status': 'ativo'} if dado['idade'] >= 18 else {**dado}
+    for dado in dados
+    
+    ]
+
+print(dados1)
+
+dados2 = [
+    
+    {**dado, 'vip': True} if dado['idade'] >= 25 else {**dado, 'vip': False}
+    for dado in dados
+    
+    ]
+    
+print(dados2)
+
+#dados3 = [
+    
+    
+#    {**dado, 'nome': 'Bruno Silva'} if dado['nome'] == 'Bruno' else {**dado}
+#    for dado in dados
+    
+#    ]
+ 
+dados3 = []
+
+for dado in dados:
+    if dado['nome'] == 'Bruno':
+        dado['nome'] = 'Bruno Silva'
+        dados3.append(dado)
+    else:
+        dados3.append(dado)
+    
+print(dados3)
+
+listas = [1,9,5,6,2]
+
+lista_vazia = []
+
+for lista in listas:
+    lista_vazia.append(lista)
+
+print(*lista_vazia)
+
+lista_vazia2 = [x for x in listas]
+    
+print(*lista_vazia2)    
+
+listas.sort(reverse = True)
+
+print(listas)
+
+dados.append({'nome': 'Julio', 'idade': 20, 'status': 'pendente'})
+dados.sort(key=lambda item: item['idade'], reverse = True)
+
+print(*dados)
